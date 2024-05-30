@@ -17,5 +17,43 @@ Easily extensible to use cases like:
 ## Requirements
 
 - cargo + rustc
+- cargo-watch
 - cmake + libclang-dev
 - docker (or podman)
+
+## Usage
+
+Build
+```sh
+make
+```
+
+Test
+```bash
+make test
+```
+
+Dev 
+```bash
+make watch
+```
+
+Run 
+```bash
+make run
+```
+
+Clean
+```bash
+make clean
+```
+
+Format
+```bash
+make fmt
+```
+
+Check 
+```bash
+make Check
+```

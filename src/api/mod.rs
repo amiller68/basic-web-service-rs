@@ -20,6 +20,10 @@ async fn hello() -> impl IntoResponse {
     (StatusCode::OK, "Hello, World!")
 }
 
+async fn goodbye() -> impl IntoResponse {
+    (StatusCode::OK, "Goodbye, World!")
+}
+
 pub fn router(state: AppState) -> Router<AppState> {
     // TODO: toughen up cors
     let cors_layer = CorsLayer::new()
@@ -30,6 +34,7 @@ pub fn router(state: AppState) -> Router<AppState> {
 
     Router::new()
         .route("/hello", get(hello))
+        .route("/goodbye", get(goodbye))
         .with_state(state)
         .layer(cors_layer)
 }

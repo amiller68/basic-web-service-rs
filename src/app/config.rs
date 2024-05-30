@@ -24,9 +24,10 @@ impl Config {
             Ok(address) => address,
             Err(_e) => {
                 tracing::warn!("No LISTEN_ADDRESS found in .env. Using default");
-                "::1:3000".to_string()
+                "127.0.0.1:3000".to_string()
             }
         };
+        println!("{}", listen_address_str);
         let listen_address = listen_address_str.parse()?;
 
         let log_level_str = match env::var("LOG_LEVEL") {

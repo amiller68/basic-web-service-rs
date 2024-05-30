@@ -28,8 +28,7 @@ COPY --from=builder /app/target/release/basic-web-service/ /app/
 
 # Set any required env variables and
 ENV RUST_LOG="info"
-ENV LISTEN_ADDR="0.0.0.0"
-ENV LISTEN_PORT="3000"
+ENV LISTEN_ADDRESS="0.0.0.0:3000"
 EXPOSE 3000
 
 # Run the server

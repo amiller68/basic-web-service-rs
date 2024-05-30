@@ -1,11 +1,12 @@
 # Set the name of your Axum server binary
-BINARY_NAME=basic_web_service
+BINARY_NAME=basic-web-service
 
 # Set the path to the source files you want to watch for changes
 WATCH_PATHS=src
 
 # Set the cargo command to run your server
 RUN_CMD=cargo run --bin $(BINARY_NAME)
+WATCH_CMD=cargo watch -x 'run --bin $(BINARY_NAME)'
 
 .PHONY: default
 default: build
@@ -20,11 +21,7 @@ run:
 
 .PHONY: watch
 watch:
-	while true; do \
-		$(MAKE) build; \
-		$(RUN_CMD) || break; \
-		inotifywait -qrre close_write,moved_to,create,delete $(WATCH_PATHS) || break; \
-	done
+	$(WATCH_CMD)
 
 .PHONY: check
 check:
