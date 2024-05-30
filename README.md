@@ -6,6 +6,7 @@ Comes with:
 
 - `axum` for the web server.
 - example `api`, `app` (state + config), `health`, and http `server`.
+- start ci for working on and shipping containers
 
 Easily extensible to use cases like:
 

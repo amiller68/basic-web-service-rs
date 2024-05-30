@@ -1,12 +1,11 @@
 # Reference: https://github.com/apps/settings
 repository:
-  name: thumbs-up
+  name: basic-web-service-rs
 
   default_branch: main
   private: true
 
-  description: Simple auth for your web services
-  topics: crypto, wasm
+  description: Simple example of a web service written in rust + axum
 
   has_issues: true
   has_projects: false
